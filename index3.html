@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Завдання з обробником подій</title>
+  <script>
+    window.onload = function() {
+      // Отримуємо посилання на всі елементи посилань за їх id
+var link1 = document.getElementById('link1');
+var link2 = document.getElementById('link2');
+var link3 = document.getElementById('link3');
+
+// Функція, яка додає href в круглих дужках до кінця тексту посилання
+function handleMouseOver(event) {
+  var link = event.target;
+  link.textContent += ' (' + link.href + ')';
+}
+
+// Функція, яка видаляє доданий href з круглими дужками з кінця тексту посилання
+function handleMouseOut(event) {
+  var link = event.target;
+  var linkText = link.textContent;
+  link.textContent = linkText.slice(0, linkText.indexOf(' ('));
+}
+
+// Додаємо обробники подій для наведення та виходу курсора на посилання
+link1.addEventListener('mouseover', handleMouseOver);
+link1.addEventListener('mouseout', handleMouseOut);
+
+link2.addEventListener('mouseover', handleMouseOver);
+link2.addEventListener('mouseout', handleMouseOut);
+
+link3.addEventListener('mouseover', handleMouseOver);
+link3.addEventListener('mouseout', handleMouseOut);
+
+// При необхідності можна видалити обробники подій для конкретного посилання
+// link1.removeEventListener('mouseover', handleMouseOver);
+// link1.removeEventListener('mouseout', handleMouseOut);
+
+    };
+  </script>
+</head>
+<body>
+  <p><a id="link1" href="https://uakino.club/cartoon/features/16867-polumyane-serce-vognyane-serce.html" >Вогняне серце</a></p>
+  <br>
+  <p><a id="link2" href="https://uakino.club/cartoon/cartoonseries/17262-gremlni-tayemnic-movaya-1-sezon.html" >Гремліни: Таємниці моґвая</a></p>
+  <br>
+  <p><a id="link3" href="https://uakino.club/cartoon/cartoonseries/17258-lyudi-v-chornomu-multseral-3-sezon.html" >Люди в чорному: мультсеріал</a></p>
+</body>
+</html>

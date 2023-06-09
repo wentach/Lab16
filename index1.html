@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Завдання з обробником подій</title>
+  <script>
+    window.onload = function() {
+      var image1 = document.getElementById('image1');
+      var image2 = document.getElementById('image2');
+      var image3 = document.getElementById('image3');
+
+      image1.onclick = function() {
+        alert(image1.src);
+      };
+
+      image2.onclick = function() {
+        alert(image2.src);
+      };
+
+      image3.onclick = function() {
+        alert(image3.src);
+      };
+    };
+  </script>
+</head>
+<body>
+  <img id="image1" src="image1.jpg" width="200" height="300">
+  <img id="image2" src="image2.jpg" width="200" height="300">
+  <img id="image3" src="image3.jpg" width="200" height="300">
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Завдання з обробником подій</title>
+  <script>
+    window.onload = function() {
+      // Отримуємо посилання на всі елементи input за їх тегом
+var inputs = document.getElementsByTagName('input');
+
+// Функція, яка виводить значення value за допомогою alert
+function handleClick(event) {
+  var input = event.target;
+  alert(input.value);
+  
+  // Відв'язуємо обробник події після першого натискання
+  input.removeEventListener('click', handleClick);
+}
+
+// Додаємо обробник події click до кожного input
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener('click', handleClick);
+}
+    };
+  </script>
+</head>
+<body>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+</body>
+</html>

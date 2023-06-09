@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Завдання з обробником подій</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+        var divs = document.querySelectorAll('div');
+
+function changeColorToRed(event) {
+  var div = event.target;
+  div.style.backgroundColor = 'red';
+  div.removeEventListener('click', changeColorToRed);
+  div.addEventListener('click', changeColorToGreen);
+}
+
+function changeColorToGreen(event) {
+  var div = event.target;
+  div.style.backgroundColor = 'green';
+  div.removeEventListener('click', changeColorToGreen);
+  div.addEventListener('click', changeColorToRed);
+}
+
+for (var i = 0; i < divs.length; i++) {
+  divs[i].addEventListener('click', changeColorToRed);
+}
+    };
+  </script>
+</head>
+<body>
+  <div>Div 1</div>
+  <div>Div 2</div>
+  <div>Div 3</div>
+</body>
+</html>

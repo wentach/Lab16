@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Завдання з обробником подій</title>
+  <script>
+    window.onload = function() {
+      var link1 = document.getElementById('link1');
+      var link2 = document.getElementById('link2');
+      var link3 = document.getElementById('link3');
+
+      function handleMouseOver(event) {
+        var link = event.target;
+        link.title = link.textContent;
+      }
+
+      function handleMouseOut(event) {
+        var link = event.target;
+        link.removeAttribute('title');
+      }
+
+      link1.addEventListener('mouseover', handleMouseOver);
+      link1.addEventListener('mouseout', handleMouseOut);
+
+      link2.addEventListener('mouseover', handleMouseOver);
+      link2.addEventListener('mouseout', handleMouseOut);
+
+      link3.addEventListener('mouseover', handleMouseOver);
+      link3.addEventListener('mouseout', handleMouseOut);
+
+      // При необхідності можна видалити обробники подій для конкретного посилання
+      // link1.removeEventListener('mouseover', handleMouseOver);
+      // link1.removeEventListener('mouseout', handleMouseOut);
+    };
+  </script>
+</head>
+<body>
+  <p><a id="link1" href="https://uakino.club/cartoon/features/16867-polumyane-serce-vognyane-serce.html" title="Link 1">Вогняне серце</a></p>
+  <br>
+  <p><a id="link2" href="https://uakino.club/cartoon/cartoonseries/17262-gremlni-tayemnic-movaya-1-sezon.html" title="Link 2">Гремліни: Таємниці моґвая</a></p>
+  <br>
+  <p><a id="link3" href="https://uakino.club/cartoon/cartoonseries/17258-lyudi-v-chornomu-multseral-3-sezon.html" title="Link 3">Люди в чорному: мультсеріал</a></p>
+</body>
+</html>

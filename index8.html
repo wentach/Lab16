@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Завдання з обробником подій</title>
+  <style>
+    input {
+      border: 1px solid;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      // Отримуємо посилання на всі елементи input за їх тегом
+var inputs = document.getElementsByTagName('input');
+
+// Функція, яка обробляє втрату фокусу input
+function handleBlur(event) {
+  var input = event.target;
+  var expectedLength = input.getAttribute('data-length');
+  var currentLength = input.value.length;
+
+  if (currentLength === parseInt(expectedLength)) {
+    input.style.borderColor = 'green'; // Границя зелена для правильного вмісту
+  } else {
+    input.style.borderColor = 'red'; // Границя червона для неправильного вмісту
+  }
+}
+
+// Додаємо обробник події blur до кожного input
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener('blur', handleBlur);
+}
+    };
+  </script>
+</head>
+<body>
+    <input type="text" data-length="5" value="Hello">
+    <input type="text" data-length="8" value="OpenAI">
+    <input type="text" data-length="10" value="JavaScript">
+</body>
+</html>

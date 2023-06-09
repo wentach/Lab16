@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Завдання з обробником подій</title>
+  <script>
+    window.onload = function() {
+      // Отримуємо посилання на всі елементи input за їх id
+var input1 = document.getElementById('input1');
+var input2 = document.getElementById('input2');
+var input3 = document.getElementById('input3');
+
+// Отримуємо посилання на абзац для виведення значення input
+var demo = document.getElementById('demo');
+
+// Функція, яка виводить значення input у абзац при втраті фокусу
+function handleBlur(event) {
+  var input = event.target;
+  demo.textContent = input.value;
+}
+
+// Додаємо обробники подій для втрати фокусу на кожному input
+input1.addEventListener('blur', handleBlur);
+input2.addEventListener('blur', handleBlur);
+input3.addEventListener('blur', handleBlur);
+    };
+  </script>
+</head>
+<body>
+  <input id="input1" type="text">
+  <input id="input2" type="text">
+  <input id="input3" type="text">
+  <p id="demo"></p>
+</body>
+</html>

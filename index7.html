@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Завдання з обробником подій</title>
+  <script>
+    window.onload = function() {
+      // Отримуємо посилання на всі елементи <p> за їх тегом
+var paragraphs = document.getElementsByTagName('p');
+
+// Функція, яка обробляє натискання на параграф
+function handleClick(event) {
+  var paragraph = event.target;
+  var number = parseInt(paragraph.textContent);
+  var square = number * number;
+  paragraph.textContent = square;
+}
+
+// Додаємо обробник події click до кожного параграфу
+for (var i = 0; i < paragraphs.length; i++) {
+  paragraphs[i].addEventListener('click', handleClick);
+}
+    };
+  </script>
+</head>
+<body>
+  <p>2</p>
+  <p>3</p>
+  <p>4</p>
+</body>
+</html>
